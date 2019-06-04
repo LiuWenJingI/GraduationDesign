@@ -1,0 +1,9 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<h1>调度员中心</h1>
+<a href="{% url 'users:fen_pei' %}">查看未分配快递</a></p>
+<a href="{% url 'users:view_cars' %}">查看本地车辆</a></p>
+<a href="{% url 'users:init_wares' %}">初始化仓库（如果不是第一次请不要点）</a></p>
+<a href="{% url 'users:init_cars' %}">初始化车辆（如果不是第一次请不要点）</a></p>
+<a href="{% url 'users:pay_wage' %}">发工资</a></p>
+{% endblock %}

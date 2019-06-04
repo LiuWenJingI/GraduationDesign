@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<h1>用户注册页面</h1>
+<body>
+<form action="/u_register.html" method="post">
+ {% csrf_token %}
+    <p> <input type="text" name="telephone" placeholder="手机号码"></p>
+    <p> <input type="text" name="name" placeholder="用户名"></p>
+    <p> <input type="email" name="email" placeholder="邮箱"></p>
+    <p> <input type="password" name="password" placeholder="密码"></p>
+    <p> <input type="password" name="password" placeholder="重复密码"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+
+
+</body>
+</html>

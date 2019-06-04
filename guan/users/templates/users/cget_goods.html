@@ -1,0 +1,41 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>入库出库</title>
+</head>
+<body>
+<div>
+
+<h1>入库出库中心</h1>
+<div>
+
+ <table>
+  <thead>
+   <tr>
+       <th>ID</th>
+       <th>商品名称</th>
+       <th>目的地</th>
+       <th>操作</th>
+
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in cgoods_list %}
+   <tr>
+
+
+   <td>{{ row.id }}</td>
+    <td>{{ row.gname }}</td>
+    <td>{{ row.gdest }}</td>
+       <td><a href="/accounts/ru_ku_done_goods?nid={{ row.id }}" rel="external nofollow" rel="external nofollow" >入库揽收订单</a></td>
+
+   
+   </tr>
+   {% endfor %}
+  </tbody>
+ </table>
+</div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "rest/base.html" %}
+{% block content %}
+
+ <h2>账号信息</h2>
+<ul>
+    <li>用户名: {{ user.username }} </li>
+    <li>邮箱: {{ user.email }} </li>
+
+</ul>
+ {% if request.user.is_staff %}
+{% if perms.users.view_goodsprice %}
+    <p><a href="{% url 'users:couriers'  %}">会计中心</a></p>
+{% endif %}
+{% if perms.users.view_goods %}
+    <p><a href="{% url 'users:courier'  %}">快递员中心</a></p>
+{% endif %}
+   {% if perms.users.view_deliverreview %}
+    <p><a href="{% url 'users:cour'  %}">调度员中心</a></p>
+{% endif %}
+  {% if perms.users.view_cars %}
+    <p><a href="{% url 'users:cars'  %}">司机中心</a></p>
+{% endif %}
+  {% endif %}
+    {% if not request.user.is_staff %}
+    <a href="{% url 'users:new_goods' %}">新建订单</a></p>
+    <a href="{% url 'users:goods_list' %}">查看未完成订单</a></p>
+    <a href="{% url 'users:fin_goods_list' %}">查看完成订单</a></p>
+    <a href="{% url 'users:get_cancel_list' %}">查看取消订单</a></p>
+    <a href="{% url 'users:get_sign_list' %}">查看待签收订单</a></p>
+    {% endif %}
+<h2>账号其他信息</h2>
+
+<ul>
+    <li>名: {{ user.first_name }} </li>
+    <li>姓: {{ user.last_name }} </li>
+    {% if request.user.is_staff %}
+    <li>部门: {{ user.profile.org }} </li>
+    <li>在部门里的编号: {{ user.profile.org_id }} </li>
+    {% endif %}
+    <li>电话号码: {{ user.profile.telephone }} </li>
+</ul>
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>新建订单</title>
+</head>
+<body>
+
+<form  method="post" action="" >
+ {% csrf_token %}
+
+      <p><p>请选择您的快递员编号：</p>
+    <td>
+            <select name="cname" >
+                <option value=1>张</option>
+                <option value=2>刘</option>
+                <option value=3>王</option>
+                <option value=4>汪</option>
+                <option value=5>周</option>
+            </select>
+        </td>
+   </p>
+    <p><input type="submit" value="提交"></p>
+</form>
+</body>
+{% endblock %}

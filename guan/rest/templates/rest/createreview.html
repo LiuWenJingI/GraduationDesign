@@ -1,0 +1,26 @@
+{% extends "rest/base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<h4>点评</h4>
+
+    <form action="{% url 'rest:deliver_detail' restaurant.id %}" method="post">
+        {% csrf_token %}
+        <p>评论</p>
+        <textarea name="comment" id="comment"></textarea>
+        <p>评分</p>
+        <p>
+            {% for rate in RATING_CHOICES %}
+                <input type="radio" name="rating" id="rating{{ forloop.counter }}" value="{{ rate.0 }}" />
+                <label for="choice{{ forloop.counter }}">{{ rate.0 }}星</label>
+                <br/>
+            {% endfor %}
+        </p>
+        <input type="submit" value="提交" />
+    </form>
+{% else %}
+    <p>请先登录</a>再进行其他操作。</p>
+{% endif %}
+
+{% endblock %}

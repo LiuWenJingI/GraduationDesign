@@ -1,0 +1,32 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>看本地车辆</title>
+</head>
+<body>
+<div>
+
+<h1>看本地车辆</h1>
+<div>
+
+ <table>
+  <thead>
+   <tr>
+       <th>ID</th>
+       <th>车辆所在地</th>
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in cgoods_list %}
+   <tr>
+   <td>{{ row.id }}</td>
+    <td>{{ row.real }}</td>
+   </tr>
+   {% endfor %}
+  </tbody>
+ </table>
+</div>
+</div>
+</body>
+{% endblock %}

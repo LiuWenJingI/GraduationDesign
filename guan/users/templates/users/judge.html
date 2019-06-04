@@ -1,0 +1,15 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>评论</title>
+</head>
+<body>
+<h1>用户评论</h1>
+<form  method="post" action="" >
+ {% csrf_token %}
+    <textarea name="judge" id="comment"></textarea>
+    <p><input type="submit" value="提交评论"></p>
+</form>
+</body>
+{% endblock %}

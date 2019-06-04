@@ -1,0 +1,32 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<table>
+  <thead>
+   <tr>
+     <th>名字</th> <th>地址</th><th>操作</th>
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in res_list %}
+   <tr>
+
+       <td>{{ row.name }}</td>
+       <td>{{ row.address }}</td>
+       <td><a href="{% url 'users:goods_list' %}">添加评论</a></td>
+
+   </tr>
+   {% endfor %}
+   {% for review in RATING_CHOICES  %}
+
+      <p>{{ review.rating}}星, {{ review.user }}点评, {{ review.date | date:"Y-m-d" }}</p>
+      <p>{{ review.comment }}</p>
+
+  {% endfor %}
+{% for rate in RATING_CHOICES %}
+                <input type="radio" name="rating" id="rating{{ forloop.counter }}" value="{{ rate.0 }}" />
+                <label for="choice{{ forloop.counter }}">{{ rate.0 }}星</label>
+                <br/>
+            {% endfor %}
+  </tbody>
+ </table>
+{% endblock %}

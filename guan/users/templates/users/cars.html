@@ -1,0 +1,7 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<h1>司机中心</h1>
+    <a href="{% url 'users:zh_xie_goods' %}">查看装卸快递</a></p>
+    <a href="{% url 'users:fa_che' %}">发车</a></p>
+    <a href="{% url 'users:hui_cheng' %}">回程</a></p>
+{% endblock %}

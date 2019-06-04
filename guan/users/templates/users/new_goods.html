@@ -1,0 +1,43 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>新建订单</title>
+</head>
+<body>
+<h1>新建订单</h1>
+<form  method="post" action="" >
+ {% csrf_token %}
+    <p><input type="text" name="gname" placeholder="货物名字"></p>
+    <p><input type="text" name="rname" placeholder="收件人名字"></p>
+    <p><input type="text" name="stel" placeholder="发件人电话"></p>
+    <p><p>请选择发件人所在城市：</p>
+    <td>
+            <select name="scity" >
+                <option value=1>北京</option>
+                <option value=2>上海</option>
+                <option value=3>深圳</option>
+                <option value=4>南京</option>
+                <option value=5>武汉</option>
+                <option value=6>长沙</option>
+            </select>
+        </td>
+   </p>
+    <p><input type="text" name="saddress" placeholder="发件人具体地址"></p>
+    <p><input type="text" name="rtel" placeholder="收件人电话"></p>
+    <p><input type="number" name="gweight" placeholder="重量"></p>
+   <p><p>请选择寄到的城市：</p>
+    <td>
+            <select name="gdest" >
+                <option value=1>北京</option>
+                <option value=2>上海</option>
+                <option value=3>深圳</option>
+                <option value=4>南京</option>
+                <option value=5>武汉</option>
+                <option value=6>长沙</option>
+            </select>
+        </td>
+   </p>
+    <p><input type="text" name="detail" placeholder="收件人具体地址"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+</body>

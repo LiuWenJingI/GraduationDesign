@@ -1,0 +1,32 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>看所有订单价格</title>
+</head>
+<body>
+<div>
+
+<h1>看所有订单价格</h1>
+<div>
+
+ <table>
+  <thead>
+   <tr>
+       <th>ID</th>
+       <th>价格</th>
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in price_list %}
+   <tr>
+   <td>{{ row.id }}</td>
+    <td>{{ row.prices }}</td>
+   </tr>
+   {% endfor %}
+  </tbody>
+ </table>
+</div>
+</div>
+</body>
+{% endblock %}

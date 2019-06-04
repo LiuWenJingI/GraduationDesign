@@ -1,0 +1,32 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>查看历史订单</title>
+</head>
+<h4>添加点评</h4>
+    <form action="{% url 'users:review_create' user.id %}" method="post">
+        {% csrf_token %}
+        <p>评论</p>
+        <textarea name="comment" id="comment"></textarea>
+        <p>评分</p>
+        <p>
+            <select name="rating" >
+                <option value=1>1星</option>
+                <option value=2>2星</option>
+                <option value=3>3星</option>
+                <option value=4>4星</option>
+                <option value=5>5星</option>
+            </select>
+        </p>
+        <input type="submit" value="提交" />
+    </form>
+    <h4>用户点评</h4>
+{% if review_list %}
+  {% for review in review_list %}
+      <p>{{ review.rating}}星, {{ review.user }}点评, {{ review.date | date:"Y-m-d" }}</p>
+      <p>{{ review.comment }}</p>
+  {% endfor %}
+{% else %}
+<p>目前还没有用户点评。</p>{% endif %}
+{% endblock %}

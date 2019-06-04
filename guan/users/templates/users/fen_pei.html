@@ -1,0 +1,35 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>查看历史订单</title>
+</head>
+<body>
+<h1>未分配的订单</h1>
+<div>
+ <table>
+  <thead>
+   <tr>
+       <th>ID</th>
+       <th>商品名称</th>
+       <th>目的地</th>
+       <th>操作</th>
+
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in cgoods_list %}
+   <tr>
+   <td>{{ row.id }}</td>
+    <td>{{ row.gname }}</td>
+    <td>{{ row.gdest }}</td>
+       <td><a href="/accounts/fen_pei_courier?nid={{ row.id }}" rel="external nofollow" rel="external nofollow" >分配快递员</a></td>
+
+   </tr>
+   {% endfor %}
+  </tbody>
+ </table>
+</div>
+
+</body>
+{% endblock %}

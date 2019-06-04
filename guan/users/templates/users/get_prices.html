@@ -1,0 +1,31 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>支付页面</title>
+</head>
+
+<h1>订单支付</h1>
+<div>
+ <table>
+  <thead>
+   <tr>
+
+
+       <th>价格</th>
+   </tr>
+  </thead>
+  <tbody>
+  {% for row in prices_list %}
+   <tr>
+    <td>{{ row.prices }}</td>
+
+   </tr>
+   {% endfor %}
+
+  </tbody>
+ </table>
+</div>
+
+<a href="{% url 'users:profile' user.id %}">确认支付</a></p>
+{% endblock %}

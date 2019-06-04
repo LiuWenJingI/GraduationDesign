@@ -1,0 +1,30 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>看工资</title>
+</head>
+<body>
+<div>
+
+<h1>看工资</h1>
+<div>
+
+ <table>
+  <thead>
+   <tr>
+       <th>wage</th>
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in f_list %}
+   <tr>
+    <td>{{ row.wage }}</td>
+   </tr>
+   {% endfor %}
+  </tbody>
+ </table>
+</div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新建订单</title>
+</head>
+<body>
+<h1>新建订单</h1>
+<form  method="post" action="" >
+ {% csrf_token %}
+    <p><input type="text" name="gname" placeholder="货物名字"></p>
+    <p><input type="number" name="gweight" placeholder="重量"></p>
+   <p><td>
+            <select name="gdest" >
+                <option value="dl">大连</option>
+                <option value="bj">北京</option>
+            </select>
+        </td>
+   </p>
+    <p><input type="submit" value="提交"></p>
+</form>
+</body>
+</html>

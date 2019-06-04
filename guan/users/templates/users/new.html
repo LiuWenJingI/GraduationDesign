@@ -1,0 +1,35 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>查看历史订单</title>
+</head>
+<body>
+<h1>已完成订单</h1>
+<div>
+ <table>
+  <thead>
+   <tr>
+       <th>ID</th>
+       <th>商品名称</th>
+       <th>目的地</th>
+         <th>操作</th>
+       <th>评论</th>
+   </tr>
+  </thead>
+  <tbody>
+   {% for row in gs_list %}
+   <tr>
+   <td>{{ row.id }}</td>
+    <td>{{ row.gname }}</td>
+    <td>{{ row.gdest }}</td>
+    <td>{{ row.judge }}</td>
+
+   </tr>
+   {% endfor %}
+  </tbody>
+ </table>
+</div>
+
+</body>
+{% endblock %}

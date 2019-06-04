@@ -1,0 +1,13 @@
+{% extends "rest/base.html" %}
+{% block content %}
+<h1>会计中心</h1>
+{% for row in acc_list %}
+   <tr>
+   <td>{{ row.id }}</td>
+   <td>{{ row.prices }}</td>
+    <td>{{ row.cs_id }}</td>
+
+
+   </tr>
+   {% endfor %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "rest/base.html" %}
+{% block content %}
+    <h2>账号信息</h2>
+<ul>
+    <li>用户名: {{ user.username }} </li>
+    <li>邮箱: {{ user.email }} </li>
+
+</ul>
+<h2>更改账号其他信息</h2>
+
+<div class="form-wrapper">
+   <form method="post" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+     {% for field in form %}
+          <div class="fieldWrapper">
+        {{ field.errors }}
+       {{ field.label_tag }} {{ field }}
+       {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+          </div>
+        {% endfor %}
+     <div class="button-wrapper submit">
+         <input type="submit" value="更改" />
+      </div>
+   </form>
+</div>
+
+
+{% endblock %}
